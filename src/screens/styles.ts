@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
   homeContainer: {
     paddingHorizontal: responsiveWidth(16),
   },
+  createProductContainer: {
+    paddingHorizontal: responsiveWidth(16),
+  },
   headTitle: {
     color: colors.black,
     fontSize: scaleFont(28),
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
     marginVertical: responsiveHeight(8),
   },
   listContent: {
-    paddingBottom: responsiveHeight(96),
+    paddingBottom: responsiveHeight(108),
   },
   image: {
     width: responsiveWidth(240),
@@ -74,6 +77,43 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: responsiveHeight(12),
+  },
+  addIcon: {
+    position: 'absolute',
+    top: responsiveHeight(750),
+    right: responsiveWidth(19),
+    zIndex: 2,
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: colors.black,
+    borderRadius: 12,
+    paddingHorizontal: responsiveWidth(12),
+    fontSize: scaleFont(14),
+  },
+  textArea: {
+    borderWidth: 1,
+    borderColor: colors.black,
+    borderRadius: 12,
+    paddingHorizontal: responsiveWidth(12),
+    fontSize: scaleFont(14),
+    textAlignVertical: 'top',
+    justifyContent: 'flex-start',
+  },
+  button: {
+    backgroundColor: colors.black,
+    paddingHorizontal: responsiveWidth(12),
+    paddingVertical: responsiveHeight(8),
+    marginLeft: responsiveWidth(16),
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    position: 'absolute',
+    top: responsiveHeight(750),
+  },
+  buttonText: {
+    color: colors.white,
   },
 });
 

@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {IProduct} from '../../interfaces/product';
+import {pop} from '../../RootNavigation';
 import {api} from '../axios';
 import {AppDispatch} from '../store';
 import {startLoading, stopLoading} from './app';
@@ -19,8 +20,10 @@ const slice = createSlice({
         : {};
       state.products = action.payload.data;
     },
-    getProduct: (state, action) => {},
-    createProduct: (state, action) => {},
+    addProduct: (state, action) => {
+      state.allProducts.push(action.payload.data);
+      pop();
+    },
   },
 });
 
@@ -39,6 +42,24 @@ export const fetchProducts = () => async (dispatch: AppDispatch) => {
     dispatch(stopLoading());
   }
 };
+
+export const addProduct =
+  (product: IProduct) => async (dispatch: AppDispatch) => {
+    try {
+      dispatch(startLoading());
+      let response = await api.post('/products', product);
+      if (response.status === 201) {
+        dispatch(
+          slice.actions.addProduct({
+            data: product,
+          }),
+        );
+      }
+      dispatch(stopLoading());
+    } catch (e) {
+      dispatch(stopLoading());
+    }
+  };
 
 export const filterProducts =
   (products: IProduct[], category: string) => async (dispatch: AppDispatch) => {
