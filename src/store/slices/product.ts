@@ -34,6 +34,7 @@ export const fetchProducts = () => async (dispatch: AppDispatch) => {
         type: 'all',
       }),
     );
+    dispatch(stopLoading());
   } catch (e) {
     dispatch(stopLoading());
   }
@@ -44,7 +45,6 @@ export const filterProducts =
     let filteredProducts = products.filter(
       product => product.category === category || category === 'all',
     );
-    console.log(filteredProducts);
     dispatch(
       slice.actions.setProducts({data: filteredProducts, type: 'filter'}),
     );

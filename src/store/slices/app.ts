@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {AppDispatch} from '../store';
 
 const slice = createSlice({
-  name: 'category',
+  name: 'app',
   initialState: {
     loading: false as boolean,
   },
@@ -22,4 +22,3 @@ export const stopLoading = () => async (dispatch: AppDispatch) => {
 };
 
 export default slice.reducer;
-module.exports = {startLoading, stopLoading};

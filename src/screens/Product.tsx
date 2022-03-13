@@ -1,13 +1,23 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {SafeAreaView, Text} from 'react-native';
-import store from './store/store';
+import {SafeAreaView, Text, View, Image} from 'react-native';
 import styles from './styles';
 
-const App = () => {
+const App = ({navigation, route}) => {
+  const trunc = (val: string, limit: number) => {
+    return val.length > limit ? val.substring(0, limit) + '..' : val;
+  };
+
   return (
-    <SafeAreaView>
-      <Text style={styles.headTitle}>Upayments Store</Text>
+    <SafeAreaView style={styles.productContainer}>
+      <Image style={styles.image} source={{uri: route.params.avatar}} />
+      <View style={styles.infoModal}>
+        <View style={styles.paddedRow}>
+          <Text style={styles.infoTitle}>{trunc(route.params.name, 24)}</Text>
+          <Text style={styles.infoLabel}>${route.params.price}</Text>
+        </View>
+
+        <Text style={styles.infoDesc}>{route.params.description}</Text>
+      </View>
     </SafeAreaView>
   );
 };

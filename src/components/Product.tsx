@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, Pressable} from 'react-native';
 import colors from '../constants/colors';
+import {navigate} from '../RootNavigation';
 import {IProduct} from '../interfaces/product';
 import ResponsiveModule from '../helpers/responsiveModule';
 const {responsiveHeight, responsiveWidth, scaleFont} = ResponsiveModule;
@@ -11,7 +12,11 @@ const Product = ({name, price, description, avatar, category}: IProduct) => {
   };
 
   return (
-    <Pressable style={styles.container}>
+    <Pressable
+      onPress={() => {
+        navigate('Product', {name, price, avatar, description, category});
+      }}
+      style={styles.container}>
       <Image style={styles.image} source={{uri: avatar}} />
       <View style={styles.infoHead}>
         <Text style={styles.infoLabel}>{trunc(name, 16)}</Text>

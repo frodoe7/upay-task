@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {SafeAreaView, View, Text, FlatList} from 'react-native';
+import {SafeAreaView, View, FlatList} from 'react-native';
 import {fetchCategories, setActive} from '../store/slices/category';
 import {fetchProducts, filterProducts} from '../store/slices/product';
 import Product from '../components/Product';
+import HeadTitle from '../components/HeadTitle';
 import {IProduct} from '../interfaces/product';
 import Tabs from '../components/Tabs';
 import {RootState} from '../store/store';
@@ -31,6 +32,7 @@ const App = () => {
   const renderProduct = ({item}: {item: IProduct}) => {
     return (
       <Product
+        id={item.id}
         avatar={item.avatar}
         category={item.category}
         name={item.name}
@@ -41,8 +43,8 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.headTitle}>Upayments Store</Text>
+    <SafeAreaView style={styles.homeContainer}>
+      <HeadTitle />
       <View />
       <Tabs
         active={active}
