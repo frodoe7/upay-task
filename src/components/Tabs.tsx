@@ -59,7 +59,6 @@ export default Tabs;
 const styles = StyleSheet.create({
   container: {
     marginTop: responsiveHeight(18),
-    marginLeft: responsiveWidth(-16),
   },
   itemContainer: {
     borderColor: colors.black,

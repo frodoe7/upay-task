@@ -16,5 +16,7 @@ const styles = StyleSheet.create({
     fontSize: scaleFont(28),
     fontStyle: 'italic',
     fontWeight: 'bold',
+    marginLeft: responsiveWidth(16),
+    marginTop: responsiveHeight(18),
   },
 });

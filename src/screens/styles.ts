@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   homeContainer: {
-    paddingHorizontal: responsiveWidth(16),
+    padding: responsiveWidth(16),
   },
   createProductContainer: {
-    paddingHorizontal: responsiveWidth(16),
+    padding: responsiveWidth(16),
   },
   headTitle: {
     color: colors.black,
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   listRow: {
     justifyContent: 'space-between',
     marginVertical: responsiveHeight(8),
+    alignSelf: 'flex-start',
   },
   listContent: {
     paddingBottom: responsiveHeight(108),
@@ -90,6 +91,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: responsiveWidth(12),
     fontSize: scaleFont(14),
+    minHeight: responsiveHeight(42),
+    marginHorizontal: responsiveWidth(16),
   },
   textArea: {
     borderWidth: 1,
@@ -99,6 +102,8 @@ const styles = StyleSheet.create({
     fontSize: scaleFont(14),
     textAlignVertical: 'top',
     justifyContent: 'flex-start',
+    minHeight: responsiveHeight(96),
+    marginHorizontal: responsiveWidth(16),
   },
   button: {
     backgroundColor: colors.black,

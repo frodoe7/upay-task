@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     shadowColor: colors.black,
     shadowOffset: {
-      width: 0,
+      width: 2,
       height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
     borderRadius: 12,
-    overflow: 'hidden',
-    width: '48%',
+    width: '45%',
+    marginLeft: responsiveWidth(12),
   },
   image: {
     width: responsiveWidth(120),
